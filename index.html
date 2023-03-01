@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs (Accordion)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="tabs">
+            <div class="anchors">
+                <a href="" class="active">React JS</a>
+                <a href="">Node JS</a>
+                <a href="">Mongo</a>
+                <a href="">Vue JS</a>
+            </div>
+            <div class="container">
+                <div class="boxes active">
+                    <h2>React JS</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta enim soluta quibusdam repellendus
+                        nam
+                        ad optio in qui natus culpa ea illo, aliquam molestias saepe illum ipsa itaque inventore
+                        accusantium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat doloremque illo
+                        qui, ad et aspernatur accusantium quo officia officiis suscipit. Officiis expedita perspiciatis
+                        exercitationem cum placeat! Iusto minus cum eligendi?</p>
+                </div>
+                <div class="boxes">
+                    <h2>Node JS</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta enim soluta quibusdam repellendus
+                        nam
+                        ad optio in qui natus culpa ea illo, aliquam molestias saepe illum ipsa itaque inventore
+                        accusantium.</p>
+                </div>
+                <div class="boxes">
+                    <h2>Mongo</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta enim soluta quibusdam repellendus
+                        nam
+                        ad optio in qui natus culpa ea illo, aliquam molestias saepe illum ipsa itaque inventore
+                        accusantium.</p>
+                </div>
+                <div class="boxes">
+                    <h2>Vue JS</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta enim soluta quibusdam repellendus
+                        nam
+                        ad optio in qui natus culpa ea illo, aliquam molestias saepe illum ipsa itaque inventore
+                        accusantium.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let anchors = document.querySelectorAll('.anchors a')
+        // console.log(anchors)
+
+        for (let i = 0; i < anchors.length; i++) {
+            anchors[i].onclick = (e) => {
+                e.preventDefault()
+                document.querySelector('a.active').classList.remove('active')
+                anchors[i].classList.add('active')
+
+                document.querySelector('div.active').classList.remove('active')
+                document.querySelectorAll('.boxes')[i].classList.add('active')
+
+            }
+        }
+    </script>
+</body>
+
+</html>
